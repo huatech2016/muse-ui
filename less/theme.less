@@ -8,16 +8,6 @@
   background-color: @avatarBackgroundColor;
 }
 
-body {
-  background-color: @baseBackgroundColor;
-  color: @baseTextColor;
-  font-family: @baseFontFamily;
-}
-
-a {
-  color: @baseLinkColor;
-}
-
 .mu-badge {
   background-color: @badgeColor;
   color: @badgeTextColor;
@@ -63,45 +53,34 @@ a {
   }
 }
 
+body {
+  background-color: @baseBackgroundColor;
+  color: @baseTextColor;
+  font-family: @baseFontFamily;
+}
+
+a {
+  color: @baseLinkColor;
+}
+
 .mu-bottom-sheet {
   background-color: @bottomSheetColor;
 }
 
-.mu-checkbox {
-  input[type="checkbox"] {
-    &:checked {
-      + .mu-checkbox-wrapper {
-        .mu-checkbox-icon-uncheck{
-          color: @checkboxCheckedColor;
-        }
-        .mu-checkbox-ripple-wrapper{
-          color: @checkboxCheckedColor;
-        }
-      }
-
+.mu-chip {
+  background-color: @chipColor;
+  color: @chipTextColor;
+  &.hover{
+    .mu-chip-delete-icon{
+      color: @chipHoverDeleteColor;
     }
+    background-color: @chipHoverColor;
+    cursor: pointer;
   }
 }
 
-.mu-checkbox-label {
-  color: @checkboxTextColor;
-  .mu-checkbox.disabled & {
-    color: @checkboxDisabledColor;
-  }
-}
-
-.mu-checkbox-icon-uncheck {
-  color: @checkboxColor;
-  .mu-checkbox.disabled & {
-    color: @checkboxDisabledColor;
-  }
-}
-
-.mu-checkbox-icon-checked {
-  color: @checkboxCheckedColor;
-  .mu-checkbox.disabled & {
-    color: @checkboxDisabledColor;
-  }
+.mu-chip-delete-icon{
+  color: @chipDeleteColor;
 }
 
 .mu-card {
@@ -141,20 +120,41 @@ a {
   color: @cardTextColor;
 }
 
-.mu-chip {
-  background-color: @chipColor;
-  color: @chipTextColor;
-  &.hover{
-    .mu-chip-delete-icon{
-      color: @chipHoverDeleteColor;
+.mu-checkbox {
+  input[type="checkbox"] {
+    &:checked {
+      + .mu-checkbox-wrapper {
+        .mu-checkbox-icon-uncheck{
+          color: @checkboxCheckedColor;
+        }
+        .mu-checkbox-ripple-wrapper{
+          color: @checkboxCheckedColor;
+        }
+      }
+
     }
-    background-color: @chipHoverColor;
-    cursor: pointer;
   }
 }
 
-.mu-chip-delete-icon{
-  color: @chipDeleteColor;
+.mu-checkbox-label {
+  color: @checkboxTextColor;
+  .mu-checkbox.disabled & {
+    color: @checkboxDisabledColor;
+  }
+}
+
+.mu-checkbox-icon-uncheck {
+  color: @checkboxColor;
+  .mu-checkbox.disabled & {
+    color: @checkboxDisabledColor;
+  }
+}
+
+.mu-checkbox-icon-checked {
+  color: @checkboxCheckedColor;
+  .mu-checkbox.disabled & {
+    color: @checkboxDisabledColor;
+  }
 }
 
 .mu-circular-progress-determinate-path{
@@ -431,6 +431,10 @@ a {
   color: @paperColor;
 }
 
+.mu-popover {
+  background-color: @popoverColor;
+}
+
 .mu-picker{
   background-color: @pickerColor;
 }
@@ -454,8 +458,33 @@ a {
   }
 }
 
-.mu-popover {
-  background-color: @popoverColor;
+.mu-popup {
+  background-color: @popupColor;
+}
+
+
+
+// raisedButton
+.mu-raised-button{
+  background-color: @raisedButtonColor;
+  color: @raisedButtonTextColor;
+  &.hover {
+    .mu-raised-button-wrapper {
+      background-color: fade(@raisedButtonTextColor, 10%);
+    }
+  }
+  &.disabled{
+    color: @raisedButtonDisabledTextColor;
+    background-color: @raisedButtonDisabledColor;
+  }
+}
+
+.mu-raised-button-primary{
+  background-color: @raisedButtonPrimaryColor;
+}
+
+.mu-raised-button-secondary{
+  background-color: @raisedButtonSecondaryColor;
 }
 
 .mu-radio {
@@ -495,42 +524,8 @@ a {
    }
 }
 
-.mu-popup {
-  background-color: @popupColor;
-}
-
-
-
-// raisedButton
-.mu-raised-button{
-  background-color: @raisedButtonColor;
-  color: @raisedButtonTextColor;
-  &.hover {
-    .mu-raised-button-wrapper {
-      background-color: fade(@raisedButtonTextColor, 10%);
-    }
-  }
-  &.disabled{
-    color: @raisedButtonDisabledTextColor;
-    background-color: @raisedButtonDisabledColor;
-  }
-}
-
-.mu-raised-button-primary{
-  background-color: @raisedButtonPrimaryColor;
-}
-
-.mu-raised-button-secondary{
-  background-color: @raisedButtonSecondaryColor;
-}
-
 .mu-refresh-control {
   color: @refreshControlColor;
-}
-
-.mu-snackbar {
-  color: @snackbarTextColor;
-  background-color: @snackbarColor;
 }
 
 .mu-slider-track {
@@ -554,6 +549,11 @@ a {
     color: @sliderDisabledColor;
     background-color: @sliderZeroColor;
   }
+}
+
+.mu-snackbar {
+  color: @snackbarTextColor;
+  background-color: @snackbarColor;
 }
 
 .mu-step-button {

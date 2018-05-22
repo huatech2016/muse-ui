@@ -55,7 +55,7 @@
             justify-content: flex-start;
             align-items: center;
             height: 100%;
-            width: 35%;
+            width: 30%;
         }
         .mu-icon-button {
             color: inherit;
