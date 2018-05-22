@@ -54,6 +54,7 @@ export default {
     justify-content: flex-start;
     align-items: center;
     height: 100%;
+            width: 30%;
   }
   .mu-icon-button {
     color: inherit;
@@ -77,6 +78,7 @@ export default {
   font-size: 20px;
   font-weight: 400;
   line-height: 56px;
+        text-align: center;
 }
 
 @media (min-width: 480px) {
