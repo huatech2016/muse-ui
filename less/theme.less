@@ -8,6 +8,16 @@
   background-color: @avatarBackgroundColor;
 }
 
+body {
+  background-color: @baseBackgroundColor;
+  color: @baseTextColor;
+  font-family: @baseFontFamily;
+}
+
+a {
+  color: @baseLinkColor;
+}
+
 .mu-badge {
   background-color: @badgeColor;
   color: @badgeTextColor;
@@ -21,16 +31,6 @@
 .mu-badge-secondary {
   background-color: @badgeSecondaryColor;
   color: @badgeSecondaryTextColor;
-}
-
-body {
-  background-color: @baseBackgroundColor;
-  color: @baseTextColor;
-  font-family: @baseFontFamily;
-}
-
-a {
-  color: @baseLinkColor;
 }
 
 .mu-bottom-nav {
@@ -65,6 +65,43 @@ a {
 
 .mu-bottom-sheet {
   background-color: @bottomSheetColor;
+}
+
+.mu-checkbox {
+  input[type="checkbox"] {
+    &:checked {
+      + .mu-checkbox-wrapper {
+        .mu-checkbox-icon-uncheck{
+          color: @checkboxCheckedColor;
+        }
+        .mu-checkbox-ripple-wrapper{
+          color: @checkboxCheckedColor;
+        }
+      }
+
+    }
+  }
+}
+
+.mu-checkbox-label {
+  color: @checkboxTextColor;
+  .mu-checkbox.disabled & {
+    color: @checkboxDisabledColor;
+  }
+}
+
+.mu-checkbox-icon-uncheck {
+  color: @checkboxColor;
+  .mu-checkbox.disabled & {
+    color: @checkboxDisabledColor;
+  }
+}
+
+.mu-checkbox-icon-checked {
+  color: @checkboxCheckedColor;
+  .mu-checkbox.disabled & {
+    color: @checkboxDisabledColor;
+  }
 }
 
 .mu-card {
@@ -118,43 +155,6 @@ a {
 
 .mu-chip-delete-icon{
   color: @chipDeleteColor;
-}
-
-.mu-checkbox {
-  input[type="checkbox"] {
-    &:checked {
-      + .mu-checkbox-wrapper {
-        .mu-checkbox-icon-uncheck{
-          color: @checkboxCheckedColor;
-        }
-        .mu-checkbox-ripple-wrapper{
-          color: @checkboxCheckedColor;
-        }
-      }
-
-    }
-  }
-}
-
-.mu-checkbox-label {
-  color: @checkboxTextColor;
-  .mu-checkbox.disabled & {
-    color: @checkboxDisabledColor;
-  }
-}
-
-.mu-checkbox-icon-uncheck {
-  color: @checkboxColor;
-  .mu-checkbox.disabled & {
-    color: @checkboxDisabledColor;
-  }
-}
-
-.mu-checkbox-icon-checked {
-  color: @checkboxCheckedColor;
-  .mu-checkbox.disabled & {
-    color: @checkboxDisabledColor;
-  }
 }
 
 .mu-circular-progress-determinate-path{
@@ -528,6 +528,11 @@ a {
   color: @refreshControlColor;
 }
 
+.mu-snackbar {
+  color: @snackbarTextColor;
+  background-color: @snackbarColor;
+}
+
 .mu-slider-track {
   background-color: @sliderTrackColor;
 }
@@ -549,11 +554,6 @@ a {
     color: @sliderDisabledColor;
     background-color: @sliderZeroColor;
   }
-}
-
-.mu-snackbar {
-  color: @snackbarTextColor;
-  background-color: @snackbarColor;
 }
 
 .mu-step-button {
@@ -692,6 +692,19 @@ a {
   }
 }
 
+.mu-tabs{
+  background-color: @tabsBackgroundColor;
+}
+.mu-tab-link-highlight {
+  background-color: @tabsLineColor;
+}
+.mu-tab-link{
+  color: @tabsTextColor;
+}
+.mu-tab-active {
+  color: @tabsSelectedTextColor;
+}
+
 .mu-text-field{
   color: @textFieldTextColor;
   &.focus-state {
@@ -738,19 +751,6 @@ a {
   .mu-text-field.has-label &.float {
     color: @textFieldHintColor
   }
-}
-
-.mu-tabs{
-  background-color: @tabsBackgroundColor;
-}
-.mu-tab-link-highlight {
-  background-color: @tabsLineColor;
-}
-.mu-tab-link{
-  color: @tabsTextColor;
-}
-.mu-tab-active {
-  color: @tabsSelectedTextColor;
 }
 
 .mu-clock-circle {
