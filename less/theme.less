@@ -33,10 +33,6 @@ a {
   color: @baseLinkColor;
 }
 
-.mu-bottom-sheet {
-  background-color: @bottomSheetColor;
-}
-
 .mu-bottom-nav {
   background-color: @bottomNavBackgroundColor;
 }
@@ -65,6 +61,10 @@ a {
       color: @bottomNavShiftSelectedColor;
     }
   }
+}
+
+.mu-bottom-sheet {
+  background-color: @bottomSheetColor;
 }
 
 .mu-card {
@@ -104,6 +104,22 @@ a {
   color: @cardTextColor;
 }
 
+.mu-chip {
+  background-color: @chipColor;
+  color: @chipTextColor;
+  &.hover{
+    .mu-chip-delete-icon{
+      color: @chipHoverDeleteColor;
+    }
+    background-color: @chipHoverColor;
+    cursor: pointer;
+  }
+}
+
+.mu-chip-delete-icon{
+  color: @chipDeleteColor;
+}
+
 .mu-checkbox {
   input[type="checkbox"] {
     &:checked {
@@ -139,22 +155,6 @@ a {
   .mu-checkbox.disabled & {
     color: @checkboxDisabledColor;
   }
-}
-
-.mu-chip {
-  background-color: @chipColor;
-  color: @chipTextColor;
-  &.hover{
-    .mu-chip-delete-icon{
-      color: @chipHoverDeleteColor;
-    }
-    background-color: @chipHoverColor;
-    cursor: pointer;
-  }
-}
-
-.mu-chip-delete-icon{
-  color: @chipDeleteColor;
 }
 
 .mu-circular-progress-determinate-path{
@@ -391,6 +391,20 @@ a {
   color: @listSecondaryTextColor;
 }
 
+.mu-pagination-item{
+  color: @paginationTextColor;
+  &.hover {
+    background-color: @paginationHoverBackgroundColor;
+  }
+  &.active {
+    color: @paginationActiveColor;
+    background-color: @paginationActiveBackgroundColor;
+  }
+  &.disabled {
+    color: @paginationDisabledColor;
+  }
+}
+
 .mu-menu-item-wrapper{
   color: @menuTextColor;
   &.active {
@@ -412,18 +426,9 @@ a {
   color: @menuRightIconColor;
 }
 
-.mu-pagination-item{
-  color: @paginationTextColor;
-  &.hover {
-    background-color: @paginationHoverBackgroundColor;
-  }
-  &.active {
-    color: @paginationActiveColor;
-    background-color: @paginationActiveBackgroundColor;
-  }
-  &.disabled {
-    color: @paginationDisabledColor;
-  }
+.mu-paper {
+  background-color: @paperBackgroundColor;
+  color: @paperColor;
 }
 
 .mu-picker{
@@ -449,17 +454,8 @@ a {
   }
 }
 
-.mu-paper {
-  background-color: @paperBackgroundColor;
-  color: @paperColor;
-}
-
 .mu-popover {
   background-color: @popoverColor;
-}
-
-.mu-popup {
-  background-color: @popupColor;
 }
 
 .mu-radio {
@@ -497,6 +493,10 @@ a {
   .mu-radio.disabled & {
      color: @radioDisabledColor;
    }
+}
+
+.mu-popup {
+  background-color: @popupColor;
 }
 
 
@@ -551,6 +551,11 @@ a {
   }
 }
 
+.mu-snackbar {
+  color: @snackbarTextColor;
+  background-color: @snackbarColor;
+}
+
 .mu-step-button {
   background-color: @stepperBackgroundColor;
   &.hover {
@@ -600,44 +605,9 @@ a {
   }
 }
 
-.mu-snackbar {
-  color: @snackbarTextColor;
-  background-color: @snackbarColor;
-}
-
 // subheader
 .mu-sub-header{
   color: @subHeaderColor;
-}
-
-.mu-table {
-  background-color: @tableBackgroundColor;
-}
-
-.mu-thead {
-  border-bottom-color: @tableBorderColor;
-}
-
-.mu-th {
-  color: @tableTheadTextColor;
-}
-
-.mu-tr {
-  border-bottom-color: @tableBorderColor;
-  color: @tableTextColor;
-  &.selected {
-    background-color: @tableRowSelectedBackgroundColor;
-  }
-  &.hover {
-    background-color: @tableRowHoverBackgroundColor;
-  }
-  &.stripe {
-    background-color: @tableRowStripeBackgroundColor;
-  }
-
-  .mu-tfoot & {
-    border-top-color: @tableBorderColor;
-  }
 }
 
 .mu-switch {
@@ -692,17 +662,34 @@ a {
   }
 }
 
-.mu-tabs{
-  background-color: @tabsBackgroundColor;
+.mu-table {
+  background-color: @tableBackgroundColor;
 }
-.mu-tab-link-highlight {
-  background-color: @tabsLineColor;
+
+.mu-thead {
+  border-bottom-color: @tableBorderColor;
 }
-.mu-tab-link{
-  color: @tabsTextColor;
+
+.mu-th {
+  color: @tableTheadTextColor;
 }
-.mu-tab-active {
-  color: @tabsSelectedTextColor;
+
+.mu-tr {
+  border-bottom-color: @tableBorderColor;
+  color: @tableTextColor;
+  &.selected {
+    background-color: @tableRowSelectedBackgroundColor;
+  }
+  &.hover {
+    background-color: @tableRowHoverBackgroundColor;
+  }
+  &.stripe {
+    background-color: @tableRowStripeBackgroundColor;
+  }
+
+  .mu-tfoot & {
+    border-top-color: @tableBorderColor;
+  }
 }
 
 .mu-text-field{
@@ -753,9 +740,17 @@ a {
   }
 }
 
-.mu-toast {
-  background-color: @toastColor;
-  color: @toastTextColor;
+.mu-tabs{
+  background-color: @tabsBackgroundColor;
+}
+.mu-tab-link-highlight {
+  background-color: @tabsLineColor;
+}
+.mu-tab-link{
+  color: @tabsTextColor;
+}
+.mu-tab-active {
+  color: @tabsSelectedTextColor;
 }
 
 .mu-clock-circle {
@@ -782,6 +777,11 @@ a {
 .mu-clock-pointer-mark {
   background-color: @timePickerSelectTextColor;
   border-color:  @timePickerSelectColor;
+}
+
+.mu-toast {
+  background-color: @toastColor;
+  color: @toastTextColor;
 }
 
 .mu-tooltip{
