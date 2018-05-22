@@ -23,16 +23,6 @@
   color: @badgeSecondaryTextColor;
 }
 
-body {
-  background-color: @baseBackgroundColor;
-  color: @baseTextColor;
-  font-family: @baseFontFamily;
-}
-
-a {
-  color: @baseLinkColor;
-}
-
 .mu-bottom-nav {
   background-color: @bottomNavBackgroundColor;
 }
@@ -61,6 +51,16 @@ a {
       color: @bottomNavShiftSelectedColor;
     }
   }
+}
+
+body {
+  background-color: @baseBackgroundColor;
+  color: @baseTextColor;
+  font-family: @baseFontFamily;
+}
+
+a {
+  color: @baseLinkColor;
 }
 
 .mu-bottom-sheet {
@@ -104,6 +104,22 @@ a {
   color: @cardTextColor;
 }
 
+.mu-chip {
+  background-color: @chipColor;
+  color: @chipTextColor;
+  &.hover{
+    .mu-chip-delete-icon{
+      color: @chipHoverDeleteColor;
+    }
+    background-color: @chipHoverColor;
+    cursor: pointer;
+  }
+}
+
+.mu-chip-delete-icon{
+  color: @chipDeleteColor;
+}
+
 .mu-checkbox {
   input[type="checkbox"] {
     &:checked {
@@ -139,22 +155,6 @@ a {
   .mu-checkbox.disabled & {
     color: @checkboxDisabledColor;
   }
-}
-
-.mu-chip {
-  background-color: @chipColor;
-  color: @chipTextColor;
-  &.hover{
-    .mu-chip-delete-icon{
-      color: @chipHoverDeleteColor;
-    }
-    background-color: @chipHoverColor;
-    cursor: pointer;
-  }
-}
-
-.mu-chip-delete-icon{
-  color: @chipDeleteColor;
 }
 
 .mu-circular-progress-determinate-path{
@@ -336,28 +336,6 @@ a {
   color: @iconButtonSecondaryColor;
 }
 
-// circle
-.mu-circle-spinner{
-  border-color: @circleColor;
-}
-
-.mu-circle-secondary {
-  border-color: @circleSecondaryColor;
-}
-
-.mu-linear-progress{
-  background-color: @linearProgressColor;
-}
-
-.mu-linear-progress-indeterminate{
-  background-color: @linearProgressFillColor;
-}
-
-.mu-linear-progress-determinate{
-  background-color: @linearProgressFillColor;
-}
-
-
 // list
 .mu-item-wrapper{
   &.hover {
@@ -391,6 +369,16 @@ a {
   color: @listSecondaryTextColor;
 }
 
+
+// circle
+.mu-circle-spinner{
+  border-color: @circleColor;
+}
+
+.mu-circle-secondary {
+  border-color: @circleSecondaryColor;
+}
+
 .mu-menu-item-wrapper{
   color: @menuTextColor;
   &.active {
@@ -410,6 +398,18 @@ a {
 
 .mu-menu-item-right-icon {
   color: @menuRightIconColor;
+}
+
+.mu-linear-progress{
+  background-color: @linearProgressColor;
+}
+
+.mu-linear-progress-indeterminate{
+  background-color: @linearProgressFillColor;
+}
+
+.mu-linear-progress-determinate{
+  background-color: @linearProgressFillColor;
 }
 
 .mu-pagination-item{
@@ -454,10 +454,6 @@ a {
   }
 }
 
-.mu-popover {
-  background-color: @popoverColor;
-}
-
 .mu-popup {
   background-color: @popupColor;
 }
@@ -499,6 +495,14 @@ a {
    }
 }
 
+.mu-popover {
+  background-color: @popoverColor;
+}
+
+.mu-refresh-control {
+  color: @refreshControlColor;
+}
+
 
 
 // raisedButton
@@ -522,33 +526,6 @@ a {
 
 .mu-raised-button-secondary{
   background-color: @raisedButtonSecondaryColor;
-}
-
-.mu-refresh-control {
-  color: @refreshControlColor;
-}
-
-.mu-slider-track {
-  background-color: @sliderTrackColor;
-}
-
-
-.mu-slider-fill{
-  background-color: @sliderSelectionColor;
-  &.disabled {
-    background-color: @sliderDisabledColor;
-  }
-}
-
-.mu-slider-thumb{
-  background-color: @sliderSelectionColor;
-  color: @sliderSelectionColor;
-  .mu-slider.zero &,
-  .mu-slider.disabled &{
-    border-color: @sliderDisabledColor;
-    color: @sliderDisabledColor;
-    background-color: @sliderZeroColor;
-  }
 }
 
 .mu-snackbar {
@@ -605,9 +582,62 @@ a {
   }
 }
 
+.mu-slider-track {
+  background-color: @sliderTrackColor;
+}
+
+
+.mu-slider-fill{
+  background-color: @sliderSelectionColor;
+  &.disabled {
+    background-color: @sliderDisabledColor;
+  }
+}
+
+.mu-slider-thumb{
+  background-color: @sliderSelectionColor;
+  color: @sliderSelectionColor;
+  .mu-slider.zero &,
+  .mu-slider.disabled &{
+    border-color: @sliderDisabledColor;
+    color: @sliderDisabledColor;
+    background-color: @sliderZeroColor;
+  }
+}
+
 // subheader
 .mu-sub-header{
   color: @subHeaderColor;
+}
+
+.mu-table {
+  background-color: @tableBackgroundColor;
+}
+
+.mu-thead {
+  border-bottom-color: @tableBorderColor;
+}
+
+.mu-th {
+  color: @tableTheadTextColor;
+}
+
+.mu-tr {
+  border-bottom-color: @tableBorderColor;
+  color: @tableTextColor;
+  &.selected {
+    background-color: @tableRowSelectedBackgroundColor;
+  }
+  &.hover {
+    background-color: @tableRowHoverBackgroundColor;
+  }
+  &.stripe {
+    background-color: @tableRowStripeBackgroundColor;
+  }
+
+  .mu-tfoot & {
+    border-top-color: @tableBorderColor;
+  }
 }
 
 .mu-switch {
@@ -659,36 +689,6 @@ a {
   background-color: @switchThumbOffColor;
   .mu-switch.disabled & {
     background-color: @switchThumbDisabledColor;
-  }
-}
-
-.mu-table {
-  background-color: @tableBackgroundColor;
-}
-
-.mu-thead {
-  border-bottom-color: @tableBorderColor;
-}
-
-.mu-th {
-  color: @tableTheadTextColor;
-}
-
-.mu-tr {
-  border-bottom-color: @tableBorderColor;
-  color: @tableTextColor;
-  &.selected {
-    background-color: @tableRowSelectedBackgroundColor;
-  }
-  &.hover {
-    background-color: @tableRowHoverBackgroundColor;
-  }
-  &.stripe {
-    background-color: @tableRowStripeBackgroundColor;
-  }
-
-  .mu-tfoot & {
-    border-top-color: @tableBorderColor;
   }
 }
 
@@ -779,15 +779,15 @@ a {
   border-color:  @timePickerSelectColor;
 }
 
-.mu-toast {
-  background-color: @toastColor;
-  color: @toastTextColor;
-}
-
 .mu-tooltip{
   color: @tooltipTextColor;
 }
 
 .mu-tooltip-ripple.when-shown {
   background-color: @tooltipRippleColor;
+}
+
+.mu-toast {
+  background-color: @toastColor;
+  color: @toastTextColor;
 }
